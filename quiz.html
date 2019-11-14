@@ -6,28 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
     <title>My First Quiz</title>
 </head>
 
 <body>
     <header>
-        <div id="highscores"></div>
+        <div id="highscores"><a href="#">HIGH SCORES</a></div>
         <div id="timer"></div>
     </header>
     <div class="container">
         <div>
-            <a href="#">HIGH SCORES</a>
-            <h1>TAKE THE QUIZ BELOW</h1>
-            
+            <h1>CODING QUIZ CHALLENGE</h1>
+
         </div>
         <div>
-            <p>HERE IS THE QUESTION</p>
+            <p class="ask">HERE IS THE QUESTION</p>
             <button class="quiz-button" id="button1">OPTION1</button>
             <button class="quiz-button" id="button2">OPTION2</button>
             <button class="quiz-button" id="button3">OPTION3</button>
             <button class="quiz-button" id="button4">OPTION4</button>
         </div>
     </div>
+
+    <footer>
+        <a href="index.html">START OVER</a>
+    </footer>
 
     <script src="script.js"></script>
     <script src="questions.js"></script>
