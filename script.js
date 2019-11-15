@@ -21,18 +21,13 @@ var questions = [
     },
     {
         title: "The last letter is",
-        choices: ["w", "bx", "y", "z"],
+        choices: ["w", "x", "y", "z"],
         answer: "z"
     },
     ///etc.
-];
+  ];
 
 
-var questionQuiz = document.getElementById("ask");
-var firstChoice = document.getElementById("button1");
-var secondChoice = document.getElementById("button2");
-var thirdChoice = document.getElementById("button3");
-var fourthChoice = document.getElementById("button4");
 
 //This was working when it was attached to the start quiz button, now I need it to run when quiz.html loads
 
@@ -51,8 +46,15 @@ function startQuiz() {
     }, 1000);
     document.querySelector(".show").setAttribute("style", "display:none");
     document.querySelector(".hide").setAttribute("style", "display:inline");
+    runQuiz();
 }
 
+var questionQuiz = document.getElementById("ask");
+var firstChoice = document.getElementById("button1");
+var secondChoice = document.getElementById("button2");
+var thirdChoice = document.getElementById("button3");
+var fourthChoice = document.getElementById("button4");
+var userResponse = [];
 
 //This also worked at one point when initiated by button. Now won't work even when attached, 
 //console says 'questions line 35 undefined'
@@ -69,9 +71,12 @@ function runQuiz() {
             alert("WRONG");
         }
     }
+    localStorage.setItem("score", score);
+    alert("You got " + score + "/" + questions.length);
 };
 
-alert("You got " + score + "/" + questions.length);
+
+
 
 function askAway() {
     console.log("askAway function was called");
@@ -81,28 +86,7 @@ function askAway() {
         secondChoice.textContent = questions[i].choices[1];
         thirdChoice.textContent = questions[i].choices[2];
         fourthChoice.textContent = questions[i].choices[3];
-    }
-}
+    }};
 
-askAway();
+    askAway();
 
-var count = 0;
-var incrementEl = document.querySelector("#increment");
-var decrementEl = document.querySelector("#decrement");
-var countEl = document.querySelector("#count");
-
-function setCounterText() {
-  countEl.textContent = count;
-}
-
-incrementEl.addEventListener("click", function() {
-  count++;
-  setCounterText();
-});
-
-decrementEl.addEventListener("click", function() {
-  if(count > 0) {
-    count--;
-    setCounterText();
-  }
-}); 
