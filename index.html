@@ -16,10 +16,34 @@
         <div id="highscores"><a href="#">HIGH SCORES</a></div>
         <div id="timer"></div>
     </header>
-    <div class="container">
-        <h1>CODING QUIZ CHALLENGE</h1>
-        <button class="quiz-button" onclick="location.href='quiz.html';">Start Quiz</button>
+
+    <div class="show">
+        <div class="container">
+            <h1>CODING QUIZ CHALLENGE</h1>
+            <button class="quiz-button" onclick="startQuiz()">Start Quiz</button>
+        </div>
     </div>
+
+    <div class="hide">
+        <div class="container">
+            <p id="ask">HERE IS THE QUESTION</p>
+            <button class="quiz-button btn-group-vertical" id="button1">OPTION1</button>
+            <br>
+            <button class="quiz-button btn-group-vertical" id="button2">OPTION2</button>
+            <br>
+            <button class="quiz-button btn-group-vertical" id="button3">OPTION3</button>
+            <br>
+            <button class="quiz-button btn-group-vertical" id="button4">OPTION4</button>
+        </div>
+    </div>
+
+    <div class="hide">
+        <div class="container">
+            <p class="display-final-score"></p>
+            Enter Initials: <input type="text" width="200">
+        </div>
+    </div>
+
 
     <script src="script.js"></script>
     <script src="questions.js"></script>

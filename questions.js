@@ -14,28 +14,39 @@ var questions = [
 
 
 
-var questionQuiz = document.querySelector(".ask");
+var questionQuiz = document.getElementById("ask");
+var firstChoice = document.getElementById("button1");
+var secondChoice = document.getElementById("button2");
+var thirdChoice = document.getElementById("button3");
+var fourthChoice = document.getElementById("button4");
+
+
+
+function askAway() {
+  console.log("askAway function was called");
+  for (var i = 0; i < questions.length; i++) {
+    questionQuiz.textContent = questions[i].title;
+    firstChoice.textContent = questions[i].choices[0];
+    secondChoice.textContent = questions[i].choices[1];
+    thirdChoice.textContent = questions[i].choices[2];
+    fourthChoice.textContent = questions[i].choices[3];
+  }
+}
 
 askAway();
 
-function askAway() {
-  for (var i = 0; i < questions.length; i++) {
-  questionQuiz.innerHTML = questions[1].title;
-}
 
+//   var themeSwitcher = document.querySelector("#theme-switcher");
+// var container = document.querySelector(".container");
+// var mode = "dark";
 
-/*
-  var themeSwitcher = document.querySelector("#theme-switcher");
-var container = document.querySelector(".container");
-var mode = "dark";
-
-themeSwitcher.addEventListener("click", function() {
-  if (mode === "dark") {
-    mode = "light";
-    container.setAttribute("class", "light");
-  }
-  else {
-    mode = "dark";
-    container.setAttribute("class", "dark");
-  }
-});
+// themeSwitcher.addEventListener("click", function() {
+//   if (mode === "dark") {
+//     mode = "light";
+//     container.setAttribute("class", "light");
+//   }
+//   else {
+//     mode = "dark";
+//     container.setAttribute("class", "dark");
+//   }
+// });

@@ -14,20 +14,29 @@ h1 {
     background-color: darkviolet;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
-
 }
 
 #highscores {
+    margin-left: 50px;
     float: left;
 }
 
 #timer {
+    margin-right: 50px;
     float: right;
 }
 
 .container {
     text-align: center;
     margin-top: 150px;
+}
+
+.show {
+    display: inline;
+}
+
+.hide {
+    display: none;
 }
 
 a {
