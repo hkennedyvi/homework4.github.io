@@ -25,11 +25,11 @@ var questions = [
         answer: "z"
     },
     ///etc.
-  ];
+];
 
 
 
-//This was working when it was attached to the start quiz button, now I need it to run when quiz.html loads
+
 
 var timeEl = document.querySelector("#timer");
 
@@ -56,8 +56,9 @@ var thirdChoice = document.getElementById("button3");
 var fourthChoice = document.getElementById("button4");
 var userResponse = [];
 
-//This also worked at one point when initiated by button. Now won't work even when attached, 
-//console says 'questions line 35 undefined'
+
+
+
 var score = 0;
 
 function runQuiz() {
@@ -76,17 +77,20 @@ function runQuiz() {
 };
 
 
+var questionIndex = 0;
+
 
 
 function askAway() {
     console.log("askAway function was called");
-    for (var i = 0; i < questions.length; i++) {
-        questionQuiz.textContent = questions[i].title;
-        firstChoice.textContent = questions[i].choices[0];
-        secondChoice.textContent = questions[i].choices[1];
-        thirdChoice.textContent = questions[i].choices[2];
-        fourthChoice.textContent = questions[i].choices[3];
-    }};
+    questionQuiz.textContent = questions[questionIndex].title;
+    firstChoice.textContent = questions[questionIndex].choices[0];
+    secondChoice.textContent = questions[questionIndex].choices[1];
+    thirdChoice.textContent = questions[questionIndex].choices[2];
+    fourthChoice.textContent = questions[questionIndex].choices[3];
+    questionIndex = questionIndex + 1;
+};
 
-    askAway();
+askAway();
+
 
