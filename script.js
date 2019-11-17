@@ -46,7 +46,7 @@ function startQuiz() {
     }, 1000);
     document.querySelector(".show").setAttribute("style", "display:none");
     document.querySelector(".hide").setAttribute("style", "display:inline");
-    runQuiz();
+    giveQuestionAnswerSet();
 }
 
 var questionQuiz = document.getElementById("ask");
@@ -58,7 +58,7 @@ var userResponse = [];
 
 
 
-
+/*
 var score = 0;
 
 function runQuiz() {
@@ -75,22 +75,71 @@ function runQuiz() {
     localStorage.setItem("score", score);
     alert("You got " + score + "/" + questions.length);
 };
-
+*/
 
 var questionIndex = 0;
+var score = 0;
 
 
-
-function askAway() {
-    console.log("askAway function was called");
+function giveQuestionAnswerSet() {
+    if (questionIndex <= 4) {
+    console.log("giveQuestionAnswerSet function was called");
     questionQuiz.textContent = questions[questionIndex].title;
     firstChoice.textContent = questions[questionIndex].choices[0];
     secondChoice.textContent = questions[questionIndex].choices[1];
     thirdChoice.textContent = questions[questionIndex].choices[2];
     fourthChoice.textContent = questions[questionIndex].choices[3];
     questionIndex = questionIndex + 1;
+    }
 };
 
-askAway();
+
+
+document.getElementById("button1").addEventListener("click", nextSet);
+document.getElementById("button2").addEventListener("click", nextSet);
+document.getElementById("button3").addEventListener("click", nextSet);
+document.getElementById("button4").addEventListener("click", nextSet);
+
+function nextSet() {
+    if (questionIndex <= 4) {
+    console.log("nextSet ran");
+
+    var userResponse = document.getElementsByName("button").textContent;
+    if (userResponse === questions[0].answer) {
+        score++;
+        alert("CORRECT");
+    } else {
+        secondsLeft = secondsLeft - 15;
+        alert("WRONG");
+    }
+    giveQuestionAnswerSet();
+    localStorage.setItem("score", score);
+}    
+};
+
+endQuiz();
+function endQuiz() {
+    if (secondsLeft <= 0) {
+        console.log("end");
+    }
+}
+/*
+
+function nextSetTwo() {
+    console.log("nextSet2 ran");
+
+    var userResponseTwo = document.getElementsByClassName("button3").textContent;
+    if (userResponseTwo === questions[0].answer) {
+        score++;
+        alert("CORRECT");
+    } else {
+        secondsLeft = secondsLeft - 15;
+        alert("WRONG");
+    }
+
+
+}
+*/
+
 
 
