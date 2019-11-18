@@ -15,30 +15,13 @@ var questions = [
       answer: "a"
   },
   {
-      title: "The first number is",
+      title: "The smallest number is",
       choices: ["1", "2", "3", "4"],
       answer: "1"
   },
   {
-      title: "The last letter is",
-      choices: ["w", "bx", "y", "z"],
+      title: "The last letter of the alphabet is",
+      choices: ["w", "x", "y", "z"],
       answer: "z"
   },
-  ///etc.
 ];
-
-
-//   var themeSwitcher = document.querySelector("#theme-switcher");
-// var container = document.querySelector(".container");
-// var mode = "dark";
-
-// themeSwitcher.addEventListener("click", function() {
-//   if (mode === "dark") {
-//     mode = "light";
-//     container.setAttribute("class", "light");
-//   }
-//   else {
-//     mode = "dark";
-//     container.setAttribute("class", "dark");
-//   }
-// });
