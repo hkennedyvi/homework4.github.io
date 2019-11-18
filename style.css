@@ -43,11 +43,7 @@ body {
     display: inline;
 }
 
-.hide {
-    display: none;
-}
-
-.second-hide {
+.hide, .second-hide, .third-hide {
     display: none;
 }
 
@@ -59,4 +55,21 @@ footer {
     bottom: 0;
     position: fixed;
     width: 100%;
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
+    background-color: white;
+}
+
+li {
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #ff5d88;
+    color: white;
+    font-size: 1.5em;
+    line-height: 1.5;
 }
