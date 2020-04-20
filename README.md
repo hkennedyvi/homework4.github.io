@@ -1,4 +1,4 @@
-# homework4.github.io
+# Quiz
 
 This application is a multiple choice quiz to be taken by anyone visiting the page. 
 
